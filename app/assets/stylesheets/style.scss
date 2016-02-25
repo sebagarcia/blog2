@@ -12,3 +12,15 @@ a,a:visited{
 .menu{
 	background-color: rgb(200,50,50);
 }
+.field{
+	margin-top: 1em;
+}
+.form-control{
+	border:none;
+	border-bottom: 1px solid;
+	outline: none;
+	width:80%;
+	display:block;
+	padding:10px 0px;
+	font-size: 1.2em;
+}
