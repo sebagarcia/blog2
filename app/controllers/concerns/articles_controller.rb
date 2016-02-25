@@ -20,7 +20,11 @@ class ArticlesController < ApplicationController
 		else
 			render :new
 		end
-
+	end
+	def destroy
+		@article = article.find (params[:id])
+		@article.destroy
+		redirect_to articles_path
 	end
 	#UPDATE /articles
 	def update
