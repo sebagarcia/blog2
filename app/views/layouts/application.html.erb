@@ -7,25 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body>	
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,700,700italic,900' rel='stylesheet' type='text/css'>
-
-	<div class="container">
-    <div class="masthead">
-      <nav>
-        <ul class="nav nav-justified">
-        	<li class="no-margin" id="logo">LOGO</li>
-          <li class="menu">
-          	<%= link_to "Inicio", root_path %>
-          </li>
-          <li class="menu">Diseño</li>
-          <li class="menu">Services</li>
-          <li class="menu">Programación</li>
-          <li class="menu">Tecnología</li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+<body>	 
+	<%= render "partials/navigation" %>
+  <p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
 </body>
 
 <%= yield %>

@@ -1,0 +1,31 @@
+<header>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,700,700italic,900' rel='stylesheet' type='text/css'>
+		<div class="container">
+	    <div class="masthead">
+	      <nav>
+	        <ul class="nav nav-justified">
+	        	<li class="menu" id="logo">LOGO</li>
+	          <li class="menu">
+	          	<%= link_to "Inicio", root_path %>
+	          </li>
+	          <li class="menu">Diseño</li>
+	          <li class="menu">Services</li>
+	          <li class="menu">Programación</li>
+	          <li class="menu">Tecnología</li>
+	          <% if user_signed_in? %>
+	          	<li class="menu">
+	          		<%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %>
+	          	</li>
+	          <% else %>
+	          	<li class="menu">
+	          		<%= link_to "Iniciar Sesión", new_user_session_path %>
+	          	</li>
+	          	<li class="menu">
+	          		<%= link_to "Registrarse", new_user_registration_path %>
+	          	</li>
+	          <% end %>
+	        </ul>
+	      </nav>
+	    </div>
+	  </div>
+  </header>
