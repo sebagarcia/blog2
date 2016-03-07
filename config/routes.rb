@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :articles
+  resources :articles do 
+    resources :comments, only: [:create, :destroy, :update]
+  end
   # get "/articles" index
   # post "/articles" create
   # delete "/articles" delete
