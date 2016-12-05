@@ -1,0 +1,12 @@
+<h1>Lista de pruebas</h1>
+<h3>id curso - id alumno - nota</h3>
+<% @tests.each do |test|%>
+
+  <h3>
+    <%= test.course_id %> <%= test.student_id %> <%= test.score %>  - <%= link_to "Eliminar", test, method: :delete, class:"bg-danger" %>
+  </h3>
+<% end %>
+  
+
+<%= link_to 'Agregar un nuevo curso', new_test_path %>
+

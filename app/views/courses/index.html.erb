@@ -1,0 +1,11 @@
+<h1>Lista de cursos</h1>
+<h3>id_profesor - Nombre</h3>
+<% @courses.each do |course|%>
+
+  <h3>
+    <%= course.teacher_id %> <%= course.name %>  - <%= link_to "Eliminar", course, method: :delete, class:"bg-danger" %>
+  </h3>
+<% end %>
+  
+
+<%= link_to 'Agregar un nuevo curso', new_course_path %>

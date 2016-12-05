@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>id Curso:</strong>
+  <%= @test.course_id %>
+</p>
+
+<p>
+  <strong>id Alumno:</strong>
+  <%= @test.student_id %>
+</p>
+
+<p>
+  <strong>Nota:</strong>
+  <%= @test.score %>
+</p>
+
+<%= link_to 'Edit', edit_test_path(@test) %> |
+<%= link_to 'Back', tests_path %>

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :enrollments
+  resources :tests
+  resources :students
+  resources :courses
+  resources :teachers
   devise_for :users
   resources :articles do 
     resources :comments, only: [:create, :destroy, :update]

@@ -1,0 +1,10 @@
+<h1>Lista de profesores</h1>
+
+<% @teachers.each do |teacher|%>
+  <h3>
+    <%= teacher.name %>  - <%= link_to "Eliminar", teacher, method: :delete, class:"bg-danger" %>
+  </h3>
+<% end %>
+  
+
+<%= link_to 'Agregar un nuevo profesor', new_teacher_path %>

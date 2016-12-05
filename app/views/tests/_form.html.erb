@@ -1,0 +1,21 @@
+<%= form_for(@test) do |f| %>
+  <% @test.errors.full_messages.each do |message| %>
+    <div>
+      * <%= message %>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.text_field :student_id, placeholder: "id alumno", class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :course_id, placeholder: "id curso", class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :score, placeholder: "Nota", class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.submit "Guardar", class: "btn btn-primary" %>
+    <%= link_to 'Atras', courses_path, class: "btn btn-primary" %>
+  </div>
+<% end %>

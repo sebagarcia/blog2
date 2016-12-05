@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306160044) do
+ActiveRecord::Schema.define(version: 20161204210102) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -33,6 +33,46 @@ ActiveRecord::Schema.define(version: 20160306160044) do
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "teacher_id"
+  end
+
+  add_index "courses", ["teacher_id"], name: "index_courses_on_teacher_id"
+
+  create_table "enrollments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "course_id"
+  end
+
+  add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id"
+
+  create_table "students", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.integer  "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "student_id"
+    t.integer  "course_id"
+  end
+
+  add_index "tests", ["course_id"], name: "index_tests_on_course_id"
+  add_index "tests", ["student_id"], name: "index_tests_on_student_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

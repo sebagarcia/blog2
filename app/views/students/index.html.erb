@@ -1,0 +1,12 @@
+
+<h1>Lista de alumnos</h1>
+
+<% @students.each do |student|%>
+  <h3>
+    <%= student.name %>  - <%= link_to "Eliminar", student, method: :delete, class:"bg-danger" %>
+  </h3>
+<% end %>
+  
+
+<%= link_to 'Agregar un nuevo alumno', new_student_path %>
+

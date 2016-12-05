@@ -4,14 +4,21 @@
 	    <div class="masthead">
 	      <nav>
 	        <ul class="nav nav-justified">
-	        	<li class="menu" id="logo">LOGO</li>
 	          <li class="menu">
 	          	<%= link_to "Inicio", root_path %>
 	          </li>
-	          <li class="menu">Diseño</li>
-	          <li class="menu">Services</li>
-	          <li class="menu">Programación</li>
-	          <li class="menu">Tecnología</li>
+	          <li class="menu">
+	          	<%= link_to "Profesores", teachers_path %>  
+	          </li>
+	          <li class="menu">
+	          	<%= link_to "Cursos", courses_path %>  
+	          </li>
+	          <li class="menu">
+	          	<%= link_to "Alumnos", students_path %>  
+	          </li>
+	          <li class="menu">
+	          	<%= link_to "Pruebas", tests_path %>  
+	          </li>
 	          <% if user_signed_in? %>
 	          	<li class="menu">
 	          		<%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %>
